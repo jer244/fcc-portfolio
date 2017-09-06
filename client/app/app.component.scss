@@ -1,0 +1,31 @@
+@import "~variables.scss";
+
+.main-container {
+  display: grid;
+  min-height: 100%;
+  grid-template-columns: 20px 1fr 20px;
+  grid-template-rows: 1fr auto;
+  grid-template-areas: ". mainBody ." "footer footer footer";
+  background-color: $primary-background-color;
+}
+.main-body {
+  grid-area: mainBody;
+  background-color: $primary-background-color;
+}
+.main-footer {
+  grid-area: footer;
+  font-size: 1.4rem;  
+  font-weight: bolder;
+  text-align: right;
+  background-color: $primary-font-color;
+  color: $primary-background-color;
+  padding: 0.3rem;
+  padding-right: 1.3rem;
+  margin: 0;
+  margin-top: 2vw;
+}
+@media screen and (min-width: 720px){
+    .main-footer{
+        font-size: 20px;
+    }
+}

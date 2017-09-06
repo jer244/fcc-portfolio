@@ -1,0 +1,53 @@
+@import "~variables.scss";
+body{
+    background-color:$secondary-background-color;
+}
+.main-container{
+    margin: 0;
+    padding: 0;
+    padding-top: 1rem;
+    color: $primary-font-color;
+    background-color: $secondary-background-color;
+    display: grid;
+    justify-items: center;
+    grid-template-columns: 20px 1fr 20px;
+    grid-template-areas:". mainBody .";
+}
+.main-body{
+    display: grid;
+    grid-area: mainBody;
+    grid-template-columns: 1fr;
+}
+.content-container{
+    display: grid;
+    grid-template-columns: 1fr 2fr;    
+}
+
+figure{
+    font-size: smaller;
+    padding: 1vw;
+    margin: 1vw;
+}
+figcaption{
+    font-size: smaller;
+    font-weight: bold;
+}
+.image-container{
+    width: 35vw;
+    & img{
+        width: 33vw;
+    }
+}
+.quote-container{
+    padding-top:5rem;
+    font-size: larger;
+    font-weight: bold;
+    font-style: italic;
+    text-align: center;
+}
+h1, h3{
+    text-align: center;
+}
+h3{
+    font-style: italic;
+}
