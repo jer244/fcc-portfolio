@@ -1,11 +1,11 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
+import { TributeComponent } from "app/tribute/tribute.component";
+import { LandingPageComponent } from "app/landing-page/landing-page.component";
 
 const routes: Routes = [
-  {
-    path: '',
-    children: []
-  }
+  { path: '', component: LandingPageComponent, pathMatch: 'full' },
+  { path: 'tribute', component: TributeComponent }
 ];
 
 @NgModule({
