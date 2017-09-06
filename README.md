@@ -43,36 +43,36 @@ Copy this table as needed to make a separate table for each team member for reco
 
 | Complete | Blog Post |Project  |
 |----------|---------|----------|
-|      |    | Comprehensive Portfolio as a Single Page App |   |
-|  |   | Build a Tribute Page |  |
-|      |    | Build a Personal Portfolio Webpage |  |
-| 3/08/2017  |  [Medium Post](https://medium.com/@P1xt/fcc-speedrun-random-quote-machine-80fbfa4a8374#.o3abnek9o)  | [Build a Random Quote Machine](./frontend/random-quote-machine) |  |
-| 3/14/2017 |  [Medium Post](https://medium.com/@P1xt/fcc-speedrun-show-the-local-weather-83cca0dfee69#.xg02qg53n)  | [Show the Local Weather](./frontend/local-weather) |  |
-| 3/16/2017 |  [Medium Post](https://medium.com/@P1xt/fcc-speedrun-wikipedia-viewer-afdc28cb978e#.qo2gl2efx)  | [Build a Wikipedia Viewer](./frontend/wikipedia-viewer) |  |
-| 3/16/2017 |  [Medium Post](https://medium.com/@P1xt/fcc-speedrun-use-the-twitch-tv-api-2a5f41188c25#.fk1oe5kzl)  | [Use the Twitch.tv JSON API](./frontend/twitch-client) |  |
-|      |  [ ]()  | [Build a JavaScript Calculator](./frontend/calculator) |  |
-|      |  [ ]()  | [Build a Pomodoro Clock](./frontend/pomodoro-clock) |  |
-|      |  [ ]()  | [Build a Tic Tac Toe Game](./frontend/tictactoe-game) |  |
-|      |  [ ]()  | [Build a Simon Game](./frontend/simon-game) |  |
-|  3/13/2017 |  [Medium Post](https://medium.com/@P1xt/fcc-speedrun-markdown-previewer-5ce1658f41ca#.aa4ujx5um)  | [Build a Markdown Previewer](./data-vis/markdown-previewer) |  |
-|  3/13/2017 |  [Medium Post](https://medium.com/@P1xt/fcc-speedrun-camper-leaderboard-618fe3c9e6c5#.egtijchw0)  | [Build a Camper Leaderboard](./data-vis/camper-leaderboard) |  |
-|  3/14/2017  |  [Medium Post](https://medium.com/@P1xt/fcc-speedrun-recipe-box-fca16a37ddb#.hax2py3v7)  | [Build a Recipe Box](./data-vis/recipe-box) |  |
-|      |  [ ]()  | [Build the Game of Life](./data-vis/game-of-life) |  |
-|      |  [ ]()  | [Build a Roguelike Dungeon Crawler](./data-vis/dungeon-crawler) |  |
-|  3/15/2017  |  [Medium Post](https://medium.com/@P1xt/fcc-speedrun-visualize-data-with-a-bar-chart-aaaf555db634#.82t74z9h1)  | [Visualize Data with a Bar Chart](./data-vis/bar-chart) |  |
-|  3/16/2017  |  [Medium Post](https://medium.com/@P1xt/fcc-speedrun-visualize-data-with-a-scatterplot-graph-a48efcd58315#.w6mkt8lgg)  | [Visualize Data with a Scatterplot Graph](./data-vis/scatterplot-graph) |  |
-|      |  [ ]()  | [Visualize Data with a Heat Map](./data-vis/heat-map) |  |
-|      |  [ ]()  | [Show National Contiguity with a Force Directed Graph](./data-vis/force-directed-graph) |  |
-|      |  [ ]()  | [Map Data Across the Globe](./data-vis/data-across-globe) |  |
-| 3/10/2017 |  [Medium Post](https://medium.com/@P1xt/fcc-speedrun-timestamp-microservice-1b3e3c17ecf5#.3jxdrm7oh)  | [Timestamp Microservice](./backend/api-timestamp) |  |
-| 3/10/2017 |  [Medium Post ](https://medium.com/@P1xt/fcc-speedrun-request-header-microservice-49cd2294cecb#.kjobgjda1)  | [Request Header Parser Microservice](./backend/api-request-header) |  |
-|      |  [ ]()  | [URL Shortener Microservice](./backend/api-url-shortener) |  |
-|      |  [ ]()  | [Image Search Abstraction Layer](./backend/api-image-search) |  |
-| 3/10/2017  |  [Medium Post](https://medium.com/@P1xt/fcc-speedrun-file-metadata-microservice-7501083886e9#.nvxdhuvpq)  | [File Metadata Microservice](./backend/api-file-metadata) |  |
-|      |  [ ]()  | [Build a Voting App](./backend/app-voting) |  |
-|      |  [ ]()  | [Build a Nightlife Coordination App](./backend/app-nightlife) |  |
-|      |  [ ]()  | [Chart the Stock Market](./backend/app-stock-market) |  |
-|      |  [ ]()  | [Manage a Book Trading Club](./backend/app-book-trading) |  |
-|      |  [ ]()  | [Build a Pinterest Clone](./backend/app-pinterest-clone) |  |
+|      | [ ]()  | Comprehensive Portfolio as a Single Page App |   |
+|      | [ ]()  | Build a Tribute Page |  |
+|      | [ ]()  | Build a Personal Portfolio Webpage |  |
+|      | [ ]()  | Build a Random Quote Machine |  |
+|      | [ ]()  | Show the Local Weather |  |
+|      | [ ]()  | Build a Wikipedia Viewer |  |
+|      | [ ]()  | Use the Twitch.tv JSON API |  |
+|      | [ ]()  | Build a JavaScript Calculator |  |
+|      | [ ]()  | Build a Pomodoro Clock |  |
+|      | [ ]()  | Build a Tic Tac Toe Game |  |
+|      | [ ]()  | Build a Simon Game |  |
+|      | [ ]()  | Build a Markdown Previewer |  |
+|      | [ ]()  | Build a Camper Leaderboard |  |
+|      | [ ]()  | Build a Recipe Box |  |
+|      | [ ]()  | Build the Game of Life |  |
+|      | [ ]()  | Build a Roguelike Dungeon Crawler |  |
+|      | [ ]()  | Visualize Data with a Bar Chart |  |
+|      | [ ]()  | Visualize Data with a Scatterplot Graph |  |
+|      | [ ]()  | Visualize Data with a Heat Map |  |
+|      | [ ]()  | Show National Contiguity with a Force Directed Graph |  |
+|      | [ ]()  | Map Data Across the Globe |  |
+|      | [ ]()  | Timestamp Microservice |  |
+|      | [ ]()  | Request Header Parser Microservice |  |
+|      | [ ]()  | URL Shortener Microservice |  |
+|      | [ ]()  | Image Search Abstraction Layer |  |
+|      | [ ]()  | File Metadata Microservice |  |
+|      | [ ]()  | Build a Voting App |  |
+|      | [ ]()  | Build a Nightlife Coordination App |  |
+|      | [ ]()  | Chart the Stock Market |  |
+|      | [ ]()  | Manage a Book Trading Club |  |
+|      | [ ]()  | Build a Pinterest Clone |  |
 
 
