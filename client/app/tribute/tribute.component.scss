@@ -45,6 +45,10 @@ figcaption{
     font-style: italic;
     text-align: center;
 }
+blockquote{
+    border-top:3px solid $secondary-highlight-color;
+    border-bottom:3px solid $secondary-highlight-color;
+}
 h1, h3{
     text-align: center;
 }

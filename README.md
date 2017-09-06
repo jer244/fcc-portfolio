@@ -43,8 +43,8 @@ Copy this table as needed to make a separate table for each team member for reco
 
 | Complete | Blog Post |Project  |
 |----------|---------|----------|
-|      | [ ]()  | Comprehensive Portfolio as a Single Page App |   |
-|   9/6/17   | []()  | Build a Tribute Page |  |
+|      |   | Comprehensive Portfolio as a Single Page App |   |
+|   9/6/17   | [Medium Post](https://medium.com/@Jeremy_hurley/chingu-speedrun-challenge-create-project-and-tribute-page-698f9831e3b)  | Build a Tribute Page |  |
 |      | [ ]()  | Build a Personal Portfolio Webpage |  |
 |      | [ ]()  | Build a Random Quote Machine |  |
 |      | [ ]()  | Show the Local Weather |  |
