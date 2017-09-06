@@ -1,1 +1,12 @@
 /* You can add global styles to this file, and also import other style files */
+$primary-background-color: #FEFFFF;
+$secondary-background-color: #DEF2F1;
+$primary-highlight-color: #3AAFA9;
+$secondary-highlight-color: #2B7A78;
+$primary-font-color: #17252A;
+html,
+body {
+  margin: 0;
+  padding: 0;
+  font-size: 2vw;
+}
