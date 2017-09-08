@@ -2,10 +2,16 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { TributeComponent } from "app/tribute/tribute.component";
 import { LandingPageComponent } from "app/landing-page/landing-page.component";
+import { RandomQuoteComponent } from "app/random-quote/random-quote.component";
+import { WeatherComponent } from "app/weather/weather.component";
+import { WikiComponent } from "app/wiki/wiki.component";
 
 const routes: Routes = [
   { path: '', component: LandingPageComponent, pathMatch: 'full' },
-  { path: 'tribute', component: TributeComponent }
+  { path: 'tribute', component: TributeComponent },
+  { path: 'quotes', component: RandomQuoteComponent },
+  { path: 'weather', component: WeatherComponent },
+  { path: 'wiki', component: WikiComponent },
 ];
 
 @NgModule({
