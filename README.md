@@ -18,8 +18,8 @@ I will be completing this challenge on my own using the MEAN stack.
 * All code for Phase 1 should be committed to your fork of this repo.
 * Phase 2 code should be in a separate repository each participant creates to contain their personal Portfolio SPA.
 * You may ask for help and help others - preference should always be given to helping someone understand, not handing them code they don't.
-* If someone is stuck, you may pair with them to help them get unstuck (on as many projects as you want) even if you're doing your own entry separately or with another pair. 
-* If someone pairs with you to help you get unstuck, be sure to make a note to credit them in your repo and in your blog posts.
+* If someone is stuck, you may pair with them to help them get unstuck (on as many projects as you want) even if you're doing your own entry/ separately or with another pair. 
+* If/ someone pairs with you to help you get unstuck, be sure to make a note to credit them in your repo and in your blog posts.
 /
 /### Deliverables
 
@@ -46,7 +46,7 @@ Copy this table as needed to make a separate table for each team member for reco
 |      |   | Comprehensive Portfolio as a Single Page App |   |
 |   9/6/17   | [Medium Post](https://medium.com/@Jeremy_hurley/chingu-speedrun-challenge-create-project-and-tribute-page-698f9831e3b)  | Build a Tribute Page |  |
 |      | [ ]()  | Build a Personal Portfolio Webpage |  |
-|      | [ ]()  | Build a Random Quote Machine |  |
+|    9/8/17  | [ ]()  | Build a Random Quote Machine |  |
 |      | [ ]()  | Show the Local Weather |  |
 |      | [ ]()  | Build a Wikipedia Viewer |  |
 |      | [ ]()  | Use the Twitch.tv JSON API |  |
