@@ -1,3 +1,22 @@
-<p>
-  weather works!
-</p>
+<button class="btn" (click)="useGps()">use gps</button>
+<form #f="ngForm" (ngSubmit)="onSubmit(f)">
+  <label for="lat">Enter Latitude</label>
+  <input
+          type="text"
+          placeholder="lat"
+          id="lat"
+          class="form-control"
+          required
+          name="lat"
+          ngModel>
+  <label for="long">Enter Longitude</label>
+  <input
+          type="text"
+          placeholder="long"
+          id="long"
+          class="form-control"
+          required
+          name="long"
+          ngModel>
+  <button class="btn" type="submit">Submit</button>
+</form>
