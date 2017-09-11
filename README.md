@@ -46,8 +46,8 @@ Copy this table as needed to make a separate table for each team member for reco
 |      |   | Comprehensive Portfolio as a Single Page App |   |
 |   9/6/17   | [Medium Post](https://medium.com/@Jeremy_hurley/chingu-speedrun-challenge-create-project-and-tribute-page-698f9831e3b)  | Build a Tribute Page |  |
 |      | [ ]()  | Build a Personal Portfolio Webpage |  |
-|    9/8/17  | [ ]()  | Build a Random Quote Machine |  |
-|      | [ ]()  | Show the Local Weather |  |
+|    9/8/17  | [Medium Post](https://medium.com/@Jeremy_hurley/chingu-speedrun-challenge-quotes-and-rabbit-holes-54c30882e3b)  | Build a Random Quote Machine |  |
+|   9/11/17   | [ ]()  | Show the Local Weather |  |
 |      | [ ]()  | Build a Wikipedia Viewer |  |
 |      | [ ]()  | Use the Twitch.tv JSON API |  |
 |      | [ ]()  | Build a JavaScript Calculator |  |
