@@ -20,6 +20,9 @@ export class QuoteService {
   getQuote(index: number) {
     return this.quotes[index];
   }
+  tweetQuote(quote: string, author: string) {
+    window.open('https://twitter.com/intent/tweet?text=' + quote + ' ' + author, 'twitter');
+  }
 }
 
 

@@ -36,5 +36,8 @@ export class RandomQuoteComponent implements OnInit {
         .subscribe(() => this.getQuote());
     }
   }
+  tweetQuote() {
+    this.quoteService.tweetQuote(this.currentQuote.quote, this.currentQuote.author);
+  }
 }
 
