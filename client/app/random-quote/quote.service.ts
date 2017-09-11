@@ -12,7 +12,7 @@ export class QuoteService {
 
   seedQuotes() {
     return this.http.get('https://talaikis.com/api/quotes/')
-      .map((response: Response) => response.json() as Quote[])
+      .map((res: Response) => res.json() as Quote[])
       .map((data) => {
         this.quotes = data;
       });

@@ -8,7 +8,8 @@ import { Quote } from './quote';
 @Component({
   selector: 'fp-random-quote',
   templateUrl: './random-quote.component.html',
-  styleUrls: ['./random-quote.component.scss']
+  styleUrls: ['./random-quote.component.scss'],
+  providers: [QuoteService]
 })
 export class RandomQuoteComponent implements OnInit {
 
@@ -29,7 +30,6 @@ export class RandomQuoteComponent implements OnInit {
     if (this.counter < 100) {
       this.currentQuote = this.quoteService.getQuote(this.counter);
       this.counter++;
-      console.log(this.currentQuote.category)
     } else {
       this.counter = 0;
       this.quoteService.seedQuotes()

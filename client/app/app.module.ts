@@ -27,7 +27,7 @@ import { QuoteService } from "app/random-quote/quote.service";
     HttpModule,
     AppRoutingModule
   ],
-  providers: [QuoteService],
+  providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
