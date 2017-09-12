@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Headers, Response, Http} from '@angular/http';
+import { Response, Http} from '@angular/http';
 
 @Injectable()
 export class WikiService {
@@ -11,4 +11,3 @@ export class WikiService {
       .map((res: Response)=> res.json())
   }
 }
-  

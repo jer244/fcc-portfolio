@@ -48,7 +48,7 @@ Copy this table as needed to make a separate table for each team member for reco
 |      | [ ]()  | Build a Personal Portfolio Webpage |  |
 |    9/8/17  | [Medium Post](https://medium.com/@Jeremy_hurley/chingu-speedrun-challenge-quotes-and-rabbit-holes-54c30882e3b)  | Build a Random Quote Machine |  |
 |   9/11/17   | [ ]()  | Show the Local Weather |  |
-|      | [ ]()  | Build a Wikipedia Viewer |  |
+|   9/12/17   | [ ]()  | Build a Wikipedia Viewer |  |
 |      | [ ]()  | Use the Twitch.tv JSON API |  |
 |      | [ ]()  | Build a JavaScript Calculator |  |
 |      | [ ]()  | Build a Pomodoro Clock |  |
