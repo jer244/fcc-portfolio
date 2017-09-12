@@ -1,1 +1,15 @@
+<div *ngIf="!currentSearch">
+  <form #f="ngForm" (ngSubmit)="onSubmit(f)">
+    <label for="search">Search</label>
+    <input type="text" placeholder="search" id="search" class="form-control" required name="search" ngModel>
+    <button class="btn" type="submit">Submit</button>
+  </form>
+</div>
+<div *ngIf="currentSearch">
+  <button class="btn" (click)="clearSearch()">New Search</button>
+</div>
 <button class="btn" (click)="getRandom()">Random</button>
+<div *ngFor="let key of keys()">
+  <h1><a href="{{results[key].fullurl}}" target="_blank">{{results[key].title}}</a></h1>
+  <p>{{results[key].extract}}</p>
+</div>
