@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { QuoteService } from "app/random-quote/quote.service";
+import { QuoteService } from "app/frontend/random-quote/quote.service";
 import 'rxjs/Rx';
 import { Observable } from 'rxjs';
 import { Quote } from './quote';

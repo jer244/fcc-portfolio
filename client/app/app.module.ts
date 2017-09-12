@@ -6,11 +6,11 @@ import { AppRoutingModule } from './app-routing.module';
 
 import { AppComponent } from './app.component';
 import { LandingPageComponent } from './landing-page/landing-page.component';
-import { TributeComponent } from './tribute/tribute.component';
-import { RandomQuoteComponent } from './random-quote/random-quote.component';
-import { WeatherComponent } from './weather/weather.component';
-import { WikiComponent } from './wiki/wiki.component';
-import { QuoteService } from "app/random-quote/quote.service";
+import { TributeComponent } from './frontend/tribute/tribute.component';
+import { RandomQuoteComponent } from './frontend/random-quote/random-quote.component';
+import { WeatherComponent } from './frontend/weather/weather.component';
+import { WikiComponent } from './frontend/wiki/wiki.component';
+import { QuoteService } from "app/frontend/random-quote/quote.service";
 
 @NgModule({
   declarations: [

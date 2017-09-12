@@ -3,7 +3,7 @@ import { Http } from '@angular/http';
 import 'rxjs/Rx';
 import { Observable } from 'rxjs';
 
-import { WikiService } from "app/wiki/wiki.service";
+import { WikiService } from "app/frontend/wiki/wiki.service";
 import { NgForm } from "@angular/forms";
 
 @Component({

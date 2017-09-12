@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { NgForm } from "@angular/forms";
-import { WeatherService } from "app/weather/weather.service";
+import { WeatherService } from "app/frontend/weather/weather.service";
 
 @Component({
   selector: 'fp-weather',
