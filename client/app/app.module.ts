@@ -11,6 +11,13 @@ import { RandomQuoteComponent } from './frontend/random-quote/random-quote.compo
 import { WeatherComponent } from './frontend/weather/weather.component';
 import { WikiComponent } from './frontend/wiki/wiki.component';
 import { QuoteService } from "app/frontend/random-quote/quote.service";
+import { TictactoeComponent } from './frontend/tictactoe/tictactoe.component';
+import { PomodoroComponent } from './frontend/pomodoro/pomodoro.component';
+import { SimonComponent } from './frontend/simon/simon.component';
+import { CalculatorComponent } from './frontend/calculator/calculator.component';
+import { GameboardComponent } from './frontend/tictactoe/gameboard/gameboard.component';
+import { ScoreboardComponent } from './frontend/tictactoe/scoreboard/scoreboard.component';
+import { CellComponent } from './frontend/tictactoe/gameboard/cell/cell.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +26,14 @@ import { QuoteService } from "app/frontend/random-quote/quote.service";
     TributeComponent,
     RandomQuoteComponent,
     WeatherComponent,
-    WikiComponent
+    WikiComponent,
+    TictactoeComponent,
+    PomodoroComponent,
+    SimonComponent,
+    CalculatorComponent,
+    GameboardComponent,
+    ScoreboardComponent,
+    CellComponent,
   ],
   imports: [
     BrowserModule,
