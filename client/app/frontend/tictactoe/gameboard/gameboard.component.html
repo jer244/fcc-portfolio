@@ -1,6 +1,8 @@
+<div>{{message}}</div>
 <div class="board" *ngFor="let row of [0,1,2]">
   <fp-cell  *ngFor="let col of [0,1,2]"
             (click)="cellClick(row*3+col)"
             [cellState]="cellArray[row*3+col]">
   </fp-cell>
 </div>
+<button class="btn" (click)="resetBoard()">Reset</button>
