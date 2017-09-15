@@ -12,31 +12,36 @@ export class GameboardComponent {
   //game state
   vsComp: boolean = false;  
   compTurn: boolean = false;
-  userSymbol: string = '';
-  compSymbol: string = '';
+  userSymbol: string = 'X';
+  compSymbol: string = 'O';
   symbols: string[] = ['X', 'O'];
-  player: string = 'X';
+  currentTurn: string = 'X';
   message: string = '';
   cellArray = Array(9).fill(null);
+
+  startCompGame(){
+    this.compSymbol = this.userSymbol == "X" ? "O" : "X";
+    this.resetBoard(0);
+  }
 
   cellClick(index: number) {
     console.log('vsComp: ' + this.vsComp + ', compTurn: ' + this.compTurn)
     //allow move if not computer's turn and cell is empty
     if (!this.compTurn && !this.cellArray[index]) {
-      this.cellArray[index] = this.player;
+      this.cellArray[index] = this.currentTurn;
       //alert and reset if win
       if (this.checkWin()) {
-        this.message = this.player + " wins!!";
-        this.resetBoard();
+        this.message = this.currentTurn + " wins!!";
+        this.resetBoard(1000);
         return;
       } //alert and reset if draw
       else if (this.checkDraw()) {
         this.message = "Draw!";
-        this.resetBoard();
+        this.resetBoard(1000);
         return;
       } //switch symbol and make comp move if vs computer
       else {
-        this.player = this.player == "X" ? "O" : "X";
+        this.currentTurn = this.currentTurn == "X" ? "O" : "X";
         if (this.vsComp) {
           this.compTurn = true;
           this.compMove();
@@ -52,19 +57,19 @@ export class GameboardComponent {
     for(let i = 0; i < 9; i++) {
       console.log(this.cellArray[i]);
       if (!this.cellArray[i]) {
-        this.cellArray[i] = this.player;
-        this.player = this.player == "X" ? "O" : "X";         
-        break;
+        this.cellArray[i] = this.currentTurn;
+       break;
       }
     }
     if (this.checkWin()) {
-      this.message = this.player + " wins!!";
-      this.resetBoard();
+      this.message = this.currentTurn + " wins!!";
+      this.resetBoard(1000);
     }else
     if (this.checkDraw()) {
       this.message = "Draw!";
-      this.resetBoard();
+      this.resetBoard(1000);
      }
+    this.currentTurn = this.currentTurn == "X" ? "O" : "X";         
     this.compTurn = false;
     return;
     }
@@ -92,11 +97,16 @@ export class GameboardComponent {
     return this.cellArray.every((elem, index, array)=>{return elem!=null})
   }
 
-  resetBoard() {
-    this.cellArray.fill(null);
-    this.player = 'X';
-    setTimeout(() => this.message = '', 1000);
-
+  resetBoard(offset: number) {
+    setTimeout(() => {
+      this.message = '';
+      this.cellArray.fill(null);
+      this.currentTurn = 'X';
+      if(this.vsComp && this.compSymbol=='X'){
+        this.compTurn=true;
+        this.compMove();
+      }
+    }, offset);
   }
 }
 

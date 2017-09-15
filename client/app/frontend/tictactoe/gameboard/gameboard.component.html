@@ -6,23 +6,20 @@
     <label for="human">Human</label>
   </div>
 </form>
-
 <div *ngIf="vsComp">
-  <div *ngFor="let symbol of symbols">
   <form>
-    <label>
-		<input  type="radio"
-			      name="symbol"
-			      [(ngModel)]="userSymbol"
-			      [value]="symbol">
-	          {{symbol}}
+    <div class="radioBtn" *ngFor="let symbol of symbols">
+      <label>
+		<input  type="radio" name="symbol" [(ngModel)]="userSymbol" [value]="symbol"> {{symbol}} 
 	</label>
+    </div>
   </form>
-  </div>
+  <button class="btn" (click)=startCompGame()>Start</button>
 </div>
 <div>{{message}}</div>
 <div class="board" *ngFor="let row of [0,1,2]">
   <fp-cell *ngFor="let col of [0,1,2]" (click)="cellClick(row*3+col)" [cellState]="cellArray[row*3+col]">
   </fp-cell>
 </div>
-<button class="btn" (click)="resetBoard()">Reset</button>
+<button class="btn" (click)="resetBoard(0)">Reset</button>
+
