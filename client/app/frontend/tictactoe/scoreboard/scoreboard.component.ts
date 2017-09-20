@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
   selector: 'fp-scoreboard',
@@ -11,5 +11,5 @@ export class ScoreboardComponent implements OnInit {
 
   ngOnInit() {
   }
-
+  @Input() scores: Object = {};
 }

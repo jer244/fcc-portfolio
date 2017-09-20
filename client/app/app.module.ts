@@ -17,7 +17,7 @@ import { SimonComponent } from './frontend/simon/simon.component';
 import { CalculatorComponent } from './frontend/calculator/calculator.component';
 import { GameboardComponent } from './frontend/tictactoe/gameboard/gameboard.component';
 import { ScoreboardComponent } from './frontend/tictactoe/scoreboard/scoreboard.component';
-import { CellComponent } from './frontend/tictactoe/gameboard/cell/cell.component';
+import { CellComponent } from './frontend/tictactoe/cell/cell.component';
 
 @NgModule({
   declarations: [

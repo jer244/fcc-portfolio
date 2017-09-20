@@ -12,5 +12,4 @@ export class CellComponent  {
   ngOnInit() {
   }
   @Input() cellState: string;
-
 }

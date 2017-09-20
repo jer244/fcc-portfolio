@@ -1,2 +1,25 @@
-<fp-scoreboard></fp-scoreboard>
-<fp-gameboard></fp-gameboard>
+<fp-scoreboard [scores]='scores'></fp-scoreboard>
+<form>Choose Opponent
+  <div>
+    <input type="radio" name="comp" [(ngModel)]="vsComp" [value]="true" [checked]="vsComp===true">
+    <label for="comp">Computer</label>
+    <input type="radio" name="human" [(ngModel)]="vsComp" [value]="false" [checked]="vsComp===false">
+    <label for="human">Human</label>
+  </div>
+</form>
+<div *ngIf="vsComp">
+  <form>
+    <div class="radioBtn" *ngFor="let symbol of symbols">
+      <label>
+		<input  type="radio" name="symbol" [(ngModel)]="userSymbol" [value]="symbol"> {{symbol}} 
+	</label>
+    </div>
+  </form>
+  <button class="btn" (click)=startCompGame()>Start</button>
+</div>
+<div>{{message}}</div>
+<div class="board" *ngFor="let row of [0,1,2]">
+  <fp-cell *ngFor="let col of [0,1,2]" (click)="cellClick(row*3+col)" [cellState]="values[cellArray[row*3+col]]" [ngClass]="{'winning-cell': winningCells[row*3+col]==true}">
+  </fp-cell>
+</div>
+<button class="btn" (click)="resetBoard(0)">Reset</button>
