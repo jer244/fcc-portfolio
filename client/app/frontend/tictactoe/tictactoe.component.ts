@@ -6,13 +6,6 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./tictactoe.component.scss']
 })
 export class TictactoeComponent implements OnInit {
-  constructor() {}
-
-  ngOnInit() {
-    this.resetBoard(0);
-    this.scores.reset();
-
-  }
   /**
    *  Tic Tac Toe game *
    * -can be played either human vs human or human vs computer (vsComp false or true respectively)
@@ -71,6 +64,13 @@ export class TictactoeComponent implements OnInit {
     }
   }
 
+  constructor() {}
+
+  ngOnInit() {
+    this.resetBoard(0);
+    this.scores.reset();
+  }
+
   startCompGame() {
     //give the computer the opposite symbol as user and reset the board
     this.compSymbol = this.userSymbol == "X" ? "O" : "X";
@@ -127,35 +127,41 @@ export class TictactoeComponent implements OnInit {
   }
 
   findBestMove() {
-    let total = this.compSymbol == 'X'? 2 : 20;
+    //look for win
+    let total = this.compSymbol == 'X' ? 2 : 20;
     console.log(total);
     let index = this.compTest(total);
-    if(index != -1){
-      return index
-    }
-    total = total == 2? 20 : 2;
-    index = this.compTest(total);
-    if(index != -1){
+    if (index != -1) {
       return index;
-    }else{
-    for (let i = 0; i < this.cellArray.length; i++) {
-      if (!this.cellArray[i]) {
-        return i;
-      }
     }
+    //look for block
+    total = total == 2 ? 20 : 2;
+    index = this.compTest(total);
+    if (index != -1) {
+      return index;
+    }
+    //choose random corner or center
+    index = this.chooseRandom([0, 2, 4, 6, 8])
+    if (index != -1) {
+      return index;
+    }
+    //choose random sides
+    index = this.chooseRandom([1, 3, 5, 7])
+    if (index != -1) {
+      return index;
     }
   }
 
-  compTest(total:number){
-    for(let i = 0; i < this.wins.length; i++){
-      if(this.cellArray[this.wins[i][0]] + this.cellArray[this.wins[i][1]] + this.cellArray[this.wins[i][2]] == total){
-        if(!this.cellArray[this.wins[i][0]]){
+  compTest(total: number) {
+    for (let i = 0; i < this.wins.length; i++) {
+      if (this.cellArray[this.wins[i][0]] + this.cellArray[this.wins[i][1]] + this.cellArray[this.wins[i][2]] == total) {
+        if (!this.cellArray[this.wins[i][0]]) {
           return this.wins[i][0];
         }
-        if(!this.cellArray[this.wins[i][1]]){
+        if (!this.cellArray[this.wins[i][1]]) {
           return this.wins[i][1];
         }
-        if(!this.cellArray[this.wins[i][2]]){
+        if (!this.cellArray[this.wins[i][2]]) {
           return this.wins[i][2];
         }
       }
@@ -163,6 +169,21 @@ export class TictactoeComponent implements OnInit {
     return -1;
   }
 
+  chooseRandom(arr: number[]) {
+    let index = Math.floor(Math.random() * (5));
+    for (let i = 0; i < arr.length; i++) {
+      if (this.cellArray[arr[index]] == 0) {
+        return arr[index];
+      } else {
+        if (i == arr.length - 1) {
+          return -1;
+        }
+        arr[index] = -1;
+        while (arr[index] == -1)
+          index = Math.floor(Math.random() * (5));
+      }
+    }
+  }
 
   checkWin() {
     this.winIndex = this.wins.findIndex((elem) => {
@@ -185,7 +206,7 @@ export class TictactoeComponent implements OnInit {
     })
   }
 
-  resetBoard(offset: number) {
+  resetBoard(delay: number) {
     setTimeout(() => {
       this.message = '';
       this.cellArray.fill(0);
@@ -195,7 +216,7 @@ export class TictactoeComponent implements OnInit {
         this.compTurn = true;
         this.compMove();
       }
-    }, offset);
+    }, delay);
   }
 }
 
