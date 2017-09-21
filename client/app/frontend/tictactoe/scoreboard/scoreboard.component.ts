@@ -1,15 +1,10 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 @Component({
   selector: 'fp-scoreboard',
   templateUrl: './scoreboard.component.html',
   styleUrls: ['./scoreboard.component.scss']
 })
-export class ScoreboardComponent implements OnInit {
-
-  constructor() { }
-
-  ngOnInit() {
-  }
+export class ScoreboardComponent{
   @Input() scores: Object = {};
 }

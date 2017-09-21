@@ -6,10 +6,5 @@ import { Component, Input } from '@angular/core';
   styleUrls: ['./cell.component.scss']
 })
 export class CellComponent  {
-
-  constructor() { }
-
-  ngOnInit() {
-  }
   @Input() cellState: string;
 }

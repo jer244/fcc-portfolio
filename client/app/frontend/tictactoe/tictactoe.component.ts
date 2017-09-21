@@ -64,8 +64,6 @@ export class TictactoeComponent implements OnInit {
     }
   }
 
-  constructor() {}
-
   ngOnInit() {
     this.resetBoard(0);
     this.scores.reset();
@@ -94,7 +92,7 @@ export class TictactoeComponent implements OnInit {
         this.scores.increment('Draw');
         this.resetBoard(1000);
         return;
-      } //switch symbol and make comp move if vs computer
+      } //switch currentTurn and make comp move if vs computer
       else {
         this.currentTurn = this.currentTurn == "X" ? "O" : "X";
         if (this.vsComp) {
