@@ -1,15 +1,20 @@
 <h2>Pomodoro</h2>
 <div>
-  {{ (startTime | amFromUnix) | amDateFormat:'mm:ss'}}
+  {{ (currWorkTime | amFromUnix) | amDateFormat:'mm:ss'}}
 </div>
 <div>
-  Work
+  Work <br>
+<button class="btn" (click)="changeTimer('start', 'add')">+</button>
+  {{ (workTime | amFromUnix) | amDateFormat:'mm:ss'}}
+<button class="btn" (click)="changeTimer('start', 'minus')">-</button>
 
 </div>
 <div>
-  Break
+  Break <br>
+<button class="btn" (click)="changeTimer('break', 'add')">+</button>
+  {{ (breakTime | amFromUnix) | amDateFormat:'mm:ss'}}
+<button class="btn" (click)="changeTimer('break', 'minus')">-</button>
 
 </div>
-{{tick}}
 <button class="btn" (click)="startClock()">Start</button>
 

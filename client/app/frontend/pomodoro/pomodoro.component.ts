@@ -1,6 +1,5 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { Observable, Subscription } from 'rxjs/Rx';
-import { TimerObservable } from 'rxjs/observable/TimerObservable';
 
 @Component({
   selector: 'fp-pomodoro',
@@ -11,15 +10,38 @@ export class PomodoroComponent implements OnInit {
 
   constructor() { }
 
-  tick: number;
   subscription: Subscription;
-  startTime: number = 600;
+  workTime: number = 600;
+  currWorkTime: number = this.workTime;
   breakTime: number = 300;
 
   startClock(){
-    let timer = TimerObservable.create(1, 1000);
-    this.subscription = timer.subscribe((t) => {this.startTime = this.startTime-t});
+    let timer = Observable.timer(0, 1000);
+    this.subscription = timer.subscribe((t) => { 
+      this.currWorkTime = this.workTime - t;
+    });
   }
+
+  changeTimer(clock: string, func: string) {
+    if (clock == 'start') {
+      if (func == 'add') {
+        this.workTime += 60;
+        return;
+      } else if(this.workTime >= 60) {
+        this.workTime -= 60;
+      }
+      return;
+    } else {
+      if (func == 'add') {
+        this.breakTime += 60;
+        return;
+      } else if(this.breakTime >= 60) {
+        this.workTime -= 60;
+      }
+      return;
+    }
+  }
+
 
   ngOnInit() {
   }
