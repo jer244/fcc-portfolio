@@ -20,7 +20,6 @@ I will be completing this challenge on my own using the MEAN stack.
 * You may ask for help and help others - preference should always be given to helping someone understand, not handing them code they don't.
 * If someone is stuck, you may pair with them to help them get unstuck (on as many projects as you want) even if you're doing your own entry/ separately or with another pair. 
 * If/ someone pairs with you to help you get unstuck, be sure to make a note to credit them in your repo and in your blog posts.
-/
 /### Deliverables
 
 * For Phase 1, all of your code should be committed/pushed to the appropriate directories in your fork of this repository.
@@ -51,8 +50,8 @@ Copy this table as needed to make a separate table for each team member for reco
 |   9/12/17   | [ ]()  | Build a Wikipedia Viewer |  |
 |      | [ ]()  | Use the Twitch.tv JSON API |  |
 |      | [ ]()  | Build a JavaScript Calculator |  |
-|      | [ ]()  | Build a Pomodoro Clock |  |
-|      | [ ]()  | Build a Tic Tac Toe Game |  |
+|   9/22/17   | [ ]()  | Build a Pomodoro Clock |  |
+|    9/21/17  | [ ]()  | Build a Tic Tac Toe Game |  |
 |      | [ ]()  | Build a Simon Game |  |
 |      | [ ]()  | Build a Markdown Previewer |  |
 |      | [ ]()  | Build a Camper Leaderboard |  |
