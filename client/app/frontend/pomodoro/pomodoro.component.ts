@@ -89,7 +89,9 @@ export class PomodoroComponent {
     }
 
     ngOnDestroy() {
+      if(this.subscription){
       this.subscription.unsubscribe();
+      }
     }
   }
 

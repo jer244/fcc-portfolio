@@ -19,8 +19,8 @@ I will be completing this challenge on my own using the MEAN stack.
 * Phase 2 code should be in a separate repository each participant creates to contain their personal Portfolio SPA.
 * You may ask for help and help others - preference should always be given to helping someone understand, not handing them code they don't.
 * If someone is stuck, you may pair with them to help them get unstuck (on as many projects as you want) even if you're doing your own entry/ separately or with another pair. 
-* If/ someone pairs with you to help you get unstuck, be sure to make a note to credit them in your repo and in your blog posts.
-/### Deliverables
+* If someone pairs with you to help you get unstuck, be sure to make a note to credit them in your repo and in your blog posts.
+### Deliverables
 
 * For Phase 1, all of your code should be committed/pushed to the appropriate directories in your fork of this repository.
 * For Phase 1, you do NOT need to host the projects on a live site, merely test them locally, then commit your code.
