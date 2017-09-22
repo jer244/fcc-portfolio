@@ -1,0 +1,10 @@
+<h2>Simon</h2>
+<div class="control-button start-button"></div>Start
+<div class="control-button strict-button" [ngClass]="{'strict-button-on': strict}" (click)="toggleStrict()"></div>Strict
+<div class="counter-display">{{ count | lpad: 2: '0'}}</div>
+<div class="game-container">
+<div class="green-button color-button"></div>
+<div class="red-button color-button"></div>
+<div class="yellow-button color-button"></div>
+<div class="blue-button color-button"></div>
+</div>

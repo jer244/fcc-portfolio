@@ -4,6 +4,7 @@ import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import { AppRoutingModule } from './app-routing.module';
 import { MomentModule } from 'angular2-moment';
+import { NgStringPipesModule } from 'ngx-pipes';
 
 import { AppComponent } from './app.component';
 import { LandingPageComponent } from './landing-page/landing-page.component';
@@ -41,7 +42,8 @@ import { CellComponent } from './frontend/tictactoe/cell/cell.component';
     FormsModule,
     HttpModule,
     AppRoutingModule,
-    MomentModule
+    MomentModule,
+    NgStringPipesModule
   ],
   providers: [],
   bootstrap: [AppComponent]
