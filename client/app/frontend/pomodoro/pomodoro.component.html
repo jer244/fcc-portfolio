@@ -1,20 +1,28 @@
 <h2>Pomodoro</h2>
-<div>
+<div *ngIf="isWorkTime">
+  {{ (currWorkTime | amFromUnix) | amDateFormat:'mm:ss'}}
+</div>
+<div *ngIf="!isWorkTime">
   {{ (currWorkTime | amFromUnix) | amDateFormat:'mm:ss'}}
 </div>
 <div>
   Work <br>
-<button class="btn" (click)="changeTimer('start', 'add')">+</button>
-  {{ (workTime | amFromUnix) | amDateFormat:'mm:ss'}}
-<button class="btn" (click)="changeTimer('start', 'minus')">-</button>
+<button class="btn" (click)="changeTimer('work', 'add')">+</button>
+  {{ (setWorkTime | amFromUnix) | amDateFormat:'mm:ss'}}
+<button class="btn" (click)="changeTimer('work', 'minus')">-</button>
 
 </div>
 <div>
   Break <br>
 <button class="btn" (click)="changeTimer('break', 'add')">+</button>
-  {{ (breakTime | amFromUnix) | amDateFormat:'mm:ss'}}
+  {{ (setBreakTime | amFromUnix) | amDateFormat:'mm:ss'}}
 <button class="btn" (click)="changeTimer('break', 'minus')">-</button>
 
 </div>
+<div *ngIf="!timeRunning">
 <button class="btn" (click)="startClock()">Start</button>
+</div>
+<div *ngIf="timeRunning">
+<button class="btn" (click)="pauseClock()">Pause</button>
+</div>
 

@@ -8,45 +8,56 @@ import { Observable, Subscription } from 'rxjs/Rx';
 })
 export class PomodoroComponent implements OnInit {
 
-  constructor() { }
+  constructor() {}
 
   subscription: Subscription;
-  workTime: number = 600;
-  currWorkTime: number = this.workTime;
-  breakTime: number = 300;
+  setWorkTime: number = 600;
+  currWorkTime: number = this.setWorkTime;
+  setBreakTime: number = 300;
+  currBreakTime: number =this.setBreakTime;
+  timeRunning: boolean = false;
+  isWorkTime: boolean = true;
+  tick: number = 0;
 
-  startClock(){
+  startClock() {
+    this.timeRunning = true;
     let timer = Observable.timer(0, 1000);
-    this.subscription = timer.subscribe((t) => { 
-      this.currWorkTime = this.workTime - t;
+    this.subscription = timer.subscribe((t) => {
+      this.tick++;
+      this.currWorkTime = this.setWorkTime - this.tick;
     });
   }
 
   changeTimer(clock: string, func: string) {
-    if (clock == 'start') {
+    if (clock == 'work') {
       if (func == 'add') {
-        this.workTime += 60;
+        this.setWorkTime += 60;
         return;
-      } else if(this.workTime >= 60) {
-        this.workTime -= 60;
+      } else if (this.setWorkTime >= 60) {
+        this.setWorkTime -= 60;
       }
       return;
     } else {
       if (func == 'add') {
-        this.breakTime += 60;
+        this.setBreakTime += 60;
         return;
-      } else if(this.breakTime >= 60) {
-        this.workTime -= 60;
+      } else if (this.setBreakTime >= 60) {
+        this.setBreakTime -= 60;
       }
       return;
     }
   }
 
-
-  ngOnInit() {
+  pauseClock(){
+    this.subscription.unsubscribe();
+    this.timeRunning = false;
   }
+
+
+  ngOnInit() {}
 
   ngOnDestroy() {
     this.subscription.unsubscribe();
   }
 }
+
