@@ -1,3 +1,15 @@
-<p>
-  pomodoro works!
-</p>
+<h2>Pomodoro</h2>
+<div>
+  {{ (startTime | amFromUnix) | amDateFormat:'mm:ss'}}
+</div>
+<div>
+  Work
+
+</div>
+<div>
+  Break
+
+</div>
+{{tick}}
+<button class="btn" (click)="startClock()">Start</button>
+
