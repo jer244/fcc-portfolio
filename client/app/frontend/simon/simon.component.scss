@@ -18,7 +18,9 @@
 }
 
 .counter-display {
-    background-color: rgb(55, 0, 12);
+    display: grid;
+    align-content: center;
+  background-color: rgb(55, 0, 12);
   color: rgb(220, 10, 20);
   font-family: orbitron;
   font-size: 23px;
@@ -29,7 +31,6 @@
   border-style: solid;
   border-color: rgb(65, 65, 65);
   text-align: center;
-  padding-bottom:10px;
 }
 
 .start-button {
@@ -45,8 +46,8 @@
 }
 
 .color-button {
-    height: 26vw;
-    width: 26vw;
+  height: 26vw;
+  width: 26vw;
 }
 
 .green-button {
@@ -55,34 +56,34 @@
   border-radius: 100% 3% 0% 3%;
   align-self: end;
   justify-self: right;
-  margin-bottom: 1vw;  
+  margin-bottom: 1vw;
 }
 
 .red-button {
   grid-area: 'red';
   background-color: rgb(159, 15, 23);
   border-radius: 3% 100% 3% 0%;
-    align-self: end;
+  align-self: end;
   justify-self: left;
-  margin-bottom: 1vw;  
+  margin-bottom: 1vw;
 }
 
 .yellow-button {
   grid-area: 'yellow';
   background-color: rgb(190, 140, 20);
   border-radius: 3% 0% 3% 100%;
-    align-self: start;
+  align-self: start;
   justify-self: right;
-  margin-top: 1vw;  
+  margin-top: 1vw;
 }
 
 .blue-button {
   grid-area: 'blue';
   background-color: rgb(0, 40, 120);
   border-radius: 0% 3% 100% 3%;
-align-self: start;
+  align-self: start;
   justify-self: left;
-  margin-top: 1vw;  
+  margin-top: 1vw;
 }
 
 .green-button-on {
