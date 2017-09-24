@@ -22,7 +22,7 @@ export class SimonComponent implements OnInit {
   strict: boolean = false;
   compMove: boolean = true;
   moves: number [] = [];
-  count: string = '20';
+  count: string = '19';   //0-19 (20 in a row wins)
   inputCount: number = 0;
   activeButton: string = '';
   colors: string [] = [
@@ -52,6 +52,10 @@ export class SimonComponent implements OnInit {
     this.displayColor();
   }
 
+  userMove(input: number){
+    console.log('userMove()');
+  }
+
   displayColor(){
     let color, sound;
     switch(this.moves[this.inputCount]){
@@ -77,7 +81,7 @@ export class SimonComponent implements OnInit {
 
     setTimeout(() => {
       this.activeButton = '';
-      if(this.inputCount < Number(this.count)-1) {
+      if(this.inputCount < Number(this.count)) {
         this.inputCount++;
         this.wait();
       }else{
@@ -105,5 +109,4 @@ export class SimonComponent implements OnInit {
     this.strict = !this.strict;
     this.count=String(Number(this.count)+1)
   }
-
-}
+} //end SimonComponent Class
