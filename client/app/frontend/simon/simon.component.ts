@@ -16,16 +16,15 @@ export class SimonComponent implements OnInit {
     this.sound1.load();
     this.sound2.load();
     this.sound3.load();
-    this.showPattern();
   }
 
   strict: boolean = false;
   compMove: boolean = true;
-  moves: number [] = [];
-  count: string = '19';   //0-19 (20 in a row wins)
+  moves: number[] = [];
+  count: string = '0'; //0-19 (20 in a row wins)
   inputCount: number = 0;
   activeButton: string = '';
-  colors: string [] = [
+  colors: string[] = [
     'green',
     'red',
     'yellow',
@@ -39,26 +38,30 @@ export class SimonComponent implements OnInit {
 
 
 
-  startGame(){
+  startGame() {
     //reset
     this.activeButton = '';
     this.compMove = true;
     this.count = '0';
     this.inputCount = 0;
     this.fillMovesArr();
+    this.showPattern();
   }
 
-  showPattern(){
+  showPattern() {
     this.displayColor();
   }
 
-  userMove(input: number){
-    console.log('userMove()');
+  userMove(input: number) {
+    if (input == this.moves[this.inputCount]) {
+      this.displayColor();
+      console.log('correct moove');
+    }
   }
 
-  displayColor(){
+  displayColor() {
     let color, sound;
-    switch(this.moves[this.inputCount]){
+    switch (this.moves[this.inputCount]) {
       case 0:
         color = 'green';
         sound = this.sound0;
@@ -79,16 +82,30 @@ export class SimonComponent implements OnInit {
     this.activeButton = color;
     sound.play();
 
+    let delay = this.compMove == true ? 800 : 300;
+
     setTimeout(() => {
       this.activeButton = '';
-      if(this.inputCount < Number(this.count)) {
+      if (this.inputCount < Number(this.count)) {
         this.inputCount++;
-        this.wait();
-      }else{
+        if (this.compMove == true) {
+          this.wait();
+        }
+        return;
+      } else {
         this.inputCount = 0;
-        this.compMove = false;
+        this.compMove = !this.compMove;
+        setTimeout(() => {
+          if (this.compMove) {
+            this.count = String(Number(this.count) + 1);
+            this.inputCount = 0;
+            this.showPattern();
+          }
+        }, 400);
+
+
       }
-    }, 800);
+    }, delay);
   }
 
   wait() {
@@ -97,16 +114,18 @@ export class SimonComponent implements OnInit {
     }, 400);
   }
 
-  fillMovesArr(){
+  fillMovesArr() {
     this.moves = [];
-    for(let i = 0; i < 20; i++){
-      this.moves.push(Math.floor(Math.random()*4))
+    for (let i = 0; i < 20; i++) {
+      this.moves.push(Math.floor(Math.random() * 4))
     }
     console.log(this.moves);
   }
 
-  toggleStrict(){
+  toggleStrict() {
     this.strict = !this.strict;
-    this.count=String(Number(this.count)+1)
+    this.count = String(Number(this.count) + 1)
   }
 } //end SimonComponent Class
+
+

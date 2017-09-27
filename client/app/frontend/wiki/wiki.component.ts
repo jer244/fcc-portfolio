@@ -14,11 +14,11 @@ import { NgForm } from "@angular/forms";
 })
 export class WikiComponent implements OnInit {
 
-  constructor(private http: Http, private wikiService: WikiService) {}
+  constructor(private http: Http, private wikiService: WikiService) { }
   currentSearch: string;
   results: Object = {};
 
-  ngOnInit() {}
+  ngOnInit() { }
 
   getRandom() {
     window.open('https://en.wikipedia.org/wiki/Special:Random', "blank")
@@ -34,7 +34,7 @@ export class WikiComponent implements OnInit {
       })
   }
 
-  keys(): Array < string > {
+  keys(): Array<string> {
     return Object.keys(this.results);
   }
 

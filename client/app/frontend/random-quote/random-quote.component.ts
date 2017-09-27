@@ -20,7 +20,7 @@ export class RandomQuoteComponent implements OnInit {
   };
   counter: number = 0;
 
-  constructor(private quoteService: QuoteService) {}
+  constructor(private quoteService: QuoteService) { }
 
   ngOnInit() {
     this.quoteService.seedQuotes()

@@ -1,12 +1,14 @@
-.board{
+.board {
     display: grid;
-    width:40vw;
+    width: 40vw;
     grid-template-columns: 1fr 1fr 1fr;
 }
-.radioBtn{
+
+.radioBtn {
     display: inline-block;
     margin-left: 5px;
 }
-.winning-cell{
+
+.winning-cell {
     background-color: #999;
 }

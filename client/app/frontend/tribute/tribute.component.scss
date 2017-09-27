@@ -1,8 +1,9 @@
 @import "~variables.scss";
-body{
-    background-color:$secondary-background-color;
+body {
+    background-color: $secondary-background-color;
 }
-.main-container{
+
+.main-container {
     margin: 0;
     padding: 0;
     padding-top: 1rem;
@@ -11,47 +12,56 @@ body{
     display: grid;
     justify-items: center;
     grid-template-columns: 20px 1fr 20px;
-    grid-template-areas:". mainBody .";
+    grid-template-areas: ". mainBody .";
 }
-.main-body{
+
+.main-body {
     display: grid;
     grid-area: mainBody;
     grid-template-columns: 1fr;
 }
-.content-container{
+
+.content-container {
     display: grid;
-    grid-template-columns: 1fr 2fr;    
+    grid-template-columns: 1fr 2fr;
 }
 
-figure{
+figure {
     font-size: smaller;
     padding: 1vw;
     margin: 1vw;
 }
-figcaption{
+
+figcaption {
     font-size: smaller;
     font-weight: bold;
 }
-.image-container{
+
+.image-container {
     width: 35vw;
-    & img{
+    & img {
         width: 33vw;
     }
 }
-.quote-container{
-    padding-top:5rem;
+
+.quote-container {
+    padding-top: 5rem;
     font-size: larger;
     font-weight: bold;
     font-style: italic;
     text-align: center;
 }
-blockquote{
-    border-top:3px solid $secondary-highlight-color;
-    border-bottom:3px solid $secondary-highlight-color;
+
+blockquote {
+    border-top: 3px solid $secondary-highlight-color;
+    border-bottom: 3px solid $secondary-highlight-color;
 }
-h1, h3{
+
+h1,
+h3 {
     text-align: center;
 }
-h3{
+
+h3 {
     font-style: italic;
 }

@@ -13,7 +13,7 @@ export class WeatherComponent {
   lat: number;
   long: number;
   currentConditions: Object;
-  constructor(private weatherService: WeatherService) {};
+  constructor(private weatherService: WeatherService) { };
   tempC = true;
 
   onSubmit(form: NgForm) {

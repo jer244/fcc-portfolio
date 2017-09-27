@@ -1,37 +1,39 @@
 @import "~variables.scss";
-
 .main-container {
-  display: grid;
-  min-height: 100%;
-  grid-template-columns: 20px 1fr 20px;
-  grid-template-rows: 1fr auto;
-  grid-template-areas: ". mainBody ." "footer footer footer";
-  background-color: $primary-background-color;
-}
-.main-body {
-  grid-area: mainBody;
-  background-color: $primary-background-color;
-}
-.main-footer {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  grid-area: footer;
-  font-size: 1.4rem;  
-  font-weight: bolder;
-  background-color: $primary-font-color;
-  color: $primary-background-color;
-  padding: 0.3rem;
-  padding-right: 1.3rem;
-  margin: 0;
-  margin-top: 2vw;
-}
-.footer-home-link{
-  align-self: left;
-  text-decoration: none;
+    display: grid;
+    min-height: 100%;
+    grid-template-columns: 20px 1fr 20px;
+    grid-template-rows: 1fr auto;
+    grid-template-areas: ". mainBody ." "footer footer footer";
+    background-color: $primary-background-color;
 }
 
-@media screen and (min-width: 720px){
-    .main-footer{
+.main-body {
+    grid-area: mainBody;
+    background-color: $primary-background-color;
+}
+
+.main-footer {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-area: footer;
+    font-size: 1.4rem;
+    font-weight: bolder;
+    background-color: $primary-font-color;
+    color: $primary-background-color;
+    padding: 0.3rem;
+    padding-right: 1.3rem;
+    margin: 0;
+    margin-top: 2vw;
+}
+
+.footer-home-link {
+    align-self: left;
+    text-decoration: none;
+}
+
+@media screen and (min-width: 720px) {
+    .main-footer {
         font-size: 20px;
     }
 }

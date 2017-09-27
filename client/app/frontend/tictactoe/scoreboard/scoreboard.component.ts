@@ -5,6 +5,6 @@ import { Component, Input } from '@angular/core';
   templateUrl: './scoreboard.component.html',
   styleUrls: ['./scoreboard.component.scss']
 })
-export class ScoreboardComponent{
+export class ScoreboardComponent {
   @Input() scores: Object = {};
 }

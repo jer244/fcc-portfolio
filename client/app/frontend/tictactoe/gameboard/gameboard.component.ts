@@ -7,10 +7,10 @@ import { Component } from '@angular/core';
 })
 export class GameboardComponent {
 
-  constructor() {}
+  constructor() { }
 
   //game state
-  vsComp: boolean = false;  
+  vsComp: boolean = false;
   compTurn: boolean = false;
   userSymbol: string = 'X';
   compSymbol: string = 'O';
@@ -19,7 +19,7 @@ export class GameboardComponent {
   message: string = '';
   cellArray = Array(9).fill(null);
 
-  startCompGame(){
+  startCompGame() {
     this.compSymbol = this.userSymbol == "X" ? "O" : "X";
     this.resetBoard(0);
   }
@@ -53,25 +53,25 @@ export class GameboardComponent {
   }
 
   compMove() {
-    if(this.compTurn){
-    for(let i = 0; i < 9; i++) {
-      console.log(this.cellArray[i]);
-      if (!this.cellArray[i]) {
-        this.cellArray[i] = this.currentTurn;
-       break;
+    if (this.compTurn) {
+      for (let i = 0; i < 9; i++) {
+        console.log(this.cellArray[i]);
+        if (!this.cellArray[i]) {
+          this.cellArray[i] = this.currentTurn;
+          break;
+        }
       }
-    }
-    if (this.checkWin()) {
-      this.message = this.currentTurn + " wins!!";
-      this.resetBoard(1000);
-    }else
-    if (this.checkDraw()) {
-      this.message = "Draw!";
-      this.resetBoard(1000);
-     }
-    this.currentTurn = this.currentTurn == "X" ? "O" : "X";         
-    this.compTurn = false;
-    return;
+      if (this.checkWin()) {
+        this.message = this.currentTurn + " wins!!";
+        this.resetBoard(1000);
+      } else
+        if (this.checkDraw()) {
+          this.message = "Draw!";
+          this.resetBoard(1000);
+        }
+      this.currentTurn = this.currentTurn == "X" ? "O" : "X";
+      this.compTurn = false;
+      return;
     }
   }
 
@@ -86,15 +86,15 @@ export class GameboardComponent {
       [0, 4, 8],
       [2, 4, 6],
     ];
-    return winLines.some((elem, i, array) => { 
-                      return  (this.cellArray[elem[0]] &&
-                              (this.cellArray[elem[0]] === this.cellArray[elem[1]]) &&
-                              (this.cellArray[elem[1]] === this.cellArray[elem[2]]))
-                          })
+    return winLines.some((elem, i, array) => {
+      return (this.cellArray[elem[0]] &&
+        (this.cellArray[elem[0]] === this.cellArray[elem[1]]) &&
+        (this.cellArray[elem[1]] === this.cellArray[elem[2]]))
+    })
   }
 
   checkDraw() {
-    return this.cellArray.every((elem, index, array)=>{return elem!=null})
+    return this.cellArray.every((elem, index, array) => { return elem != null })
   }
 
   resetBoard(offset: number) {
@@ -102,8 +102,8 @@ export class GameboardComponent {
       this.message = '';
       this.cellArray.fill(null);
       this.currentTurn = 'X';
-      if(this.vsComp && this.compSymbol=='X'){
-        this.compTurn=true;
+      if (this.vsComp && this.compSymbol == 'X') {
+        this.compTurn = true;
         this.compMove();
       }
     }, offset);

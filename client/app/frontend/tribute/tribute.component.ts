@@ -5,4 +5,4 @@ import { Component, OnInit } from '@angular/core';
   templateUrl: './tribute.component.html',
   styleUrls: ['./tribute.component.scss']
 })
-export class TributeComponent {}
+export class TributeComponent { }

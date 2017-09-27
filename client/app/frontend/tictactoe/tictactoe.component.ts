@@ -114,10 +114,10 @@ export class TictactoeComponent implements OnInit {
         this.scores.increment(this.currentTurn);
         this.resetBoard(1000);
       } else
-      if (this.checkDraw()) {
-        this.message = "Draw!";
-        this.resetBoard(1000);
-      }
+        if (this.checkDraw()) {
+          this.message = "Draw!";
+          this.resetBoard(1000);
+        }
       this.currentTurn = this.currentTurn == "X" ? "O" : "X";
       this.compTurn = false;
       return;

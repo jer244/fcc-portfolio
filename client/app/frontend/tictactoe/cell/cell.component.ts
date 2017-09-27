@@ -5,6 +5,6 @@ import { Component, Input } from '@angular/core';
   templateUrl: './cell.component.html',
   styleUrls: ['./cell.component.scss']
 })
-export class CellComponent  {
+export class CellComponent {
   @Input() cellState: string;
 }

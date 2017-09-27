@@ -7,7 +7,7 @@ import { Quote } from './quote';
 @Injectable()
 export class QuoteService {
 
-  constructor(private http: Http) {}
+  constructor(private http: Http) { }
   quotes: Quote[] = [];
 
   seedQuotes() {

@@ -16,11 +16,11 @@ const routes: Routes = [
   { path: 'quotes', component: RandomQuoteComponent },
   { path: 'weather', component: WeatherComponent },
   { path: 'wiki', component: WikiComponent },
-  { path: 'calculator', component: CalculatorComponent},
-  { path: 'pomo', component: PomodoroComponent},
-  { path: 'tictactoe', component: TictactoeComponent},
-  { path: 'simon', component: SimonComponent},
-  { path: '**', redirectTo:'/' },
+  { path: 'calculator', component: CalculatorComponent },
+  { path: 'pomo', component: PomodoroComponent },
+  { path: 'tictactoe', component: TictactoeComponent },
+  { path: 'simon', component: SimonComponent },
+  { path: '**', redirectTo: '/' },
 ];
 
 @NgModule({
