@@ -20,9 +20,9 @@ export class SimonComponent implements OnInit {
 
   strict: boolean = false;
   compMove: boolean = true;
-  moves: number[] = [];
-  count: string = '0'; //0-19 (20 in a row wins)
-  inputCount: number = 0;
+  moves: number[] = []; //[0] is a dummy placeholder; game will be played using [1]-[20]
+  count: string = '1';
+  inputCount: number = 1;
   activeButton: string = '';
   colors: string[] = [
     'green',
@@ -36,16 +36,26 @@ export class SimonComponent implements OnInit {
   sound3 = new Audio('https://s3.amazonaws.com/freecodecamp/simonSound4.mp3');
   buzzer = new Audio('https://dl.dropboxusercontent.com/s/3rsj0vvm1hhjcmj/Wrong-answer-sound-effect.mp3?dl=0');
 
-
-
   startGame() {
     //reset
     this.activeButton = '';
     this.compMove = true;
-    this.count = '0';
-    this.inputCount = 0;
+    this.count = '1';
+    this.inputCount = 1;
     this.fillMovesArr();
     this.showPattern();
+  }
+
+  fillMovesArr() {
+    this.moves = [];
+    for (let i = 0; i < 21; i++) {
+      this.moves.push(Math.floor(Math.random() * 4))
+    }
+    console.log(this.moves);
+  }
+
+  toggleStrict() {
+    this.strict = !this.strict;
   }
 
   showPattern() {
@@ -63,23 +73,22 @@ export class SimonComponent implements OnInit {
     let color, sound;
     switch (this.moves[this.inputCount]) {
       case 0:
-        color = 'green';
+        this.activeButton = 'green';
         sound = this.sound0;
         break;
       case 1:
-        color = 'red';
+        this.activeButton = 'red';
         sound = this.sound1;
         break;
       case 2:
-        color = 'yellow';
+        this.activeButton = 'yellow';
         sound = this.sound2;
         break;
       case 3:
-        color = 'blue';
+        this.activeButton = 'blue';
         sound = this.sound3;
         break;
     }
-    this.activeButton = color;
     sound.play();
 
     let delay = this.compMove == true ? 800 : 300;
@@ -93,12 +102,16 @@ export class SimonComponent implements OnInit {
         }
         return;
       } else {
-        this.inputCount = 0;
+        if (this.compMove == false) {
+          this.showWin();
+          return;
+        }
+        this.inputCount = 1;
         this.compMove = !this.compMove;
         setTimeout(() => {
           if (this.compMove) {
             this.count = String(Number(this.count) + 1);
-            this.inputCount = 0;
+            this.inputCount = 1;
             this.showPattern();
           }
         }, 400);
@@ -114,18 +127,25 @@ export class SimonComponent implements OnInit {
     }, 400);
   }
 
-  fillMovesArr() {
-    this.moves = [];
-    for (let i = 0; i < 20; i++) {
-      this.moves.push(Math.floor(Math.random() * 4))
+  showWin() {
+    let flashes = 12;
+    function showFlash() {
+      setTimeout(() => {
+        if (flashes) {
+          this.activeButton = this.colors[flashes % 4];
+          flashes--;
+          showFlash();
+        }
+        else{
+              this.activeButton = '';
+              this.compMove = true;
+              this.count = '1';
+              this.inputCount = 1;
+        }
+        }, 200);
     }
-    console.log(this.moves);
   }
 
-  toggleStrict() {
-    this.strict = !this.strict;
-    this.count = String(Number(this.count) + 1)
-  }
-} //end SimonComponent Class
+  } //end SimonComponent Class
 
 
