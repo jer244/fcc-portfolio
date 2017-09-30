@@ -11,7 +11,6 @@ export class SimonComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
-    this.fillMovesArr();
     this.sound0.load();
     this.sound1.load();
     this.sound2.load();
@@ -24,25 +23,30 @@ export class SimonComponent implements OnInit {
   count: string = '1';
   inputCount: number = 1;
   activeButton: string = '';
-  colors: string[] = [
-    'green',
-    'red',
-    'yellow',
-    'blue'
-  ]
+  winningNumber: number = 3;
+  flashes: number = 12;   //number of flashes in winning game display
+
   sound0 = new Audio('https://s3.amazonaws.com/freecodecamp/simonSound1.mp3');
   sound1 = new Audio('https://s3.amazonaws.com/freecodecamp/simonSound2.mp3');
   sound2 = new Audio('https://s3.amazonaws.com/freecodecamp/simonSound3.mp3');
   sound3 = new Audio('https://s3.amazonaws.com/freecodecamp/simonSound4.mp3');
   buzzer = new Audio('https://dl.dropboxusercontent.com/s/3rsj0vvm1hhjcmj/Wrong-answer-sound-effect.mp3?dl=0');
 
+  colors: string[] = [
+    'green',
+    'red',
+    'yellow',
+    'blue'
+  ]
   startGame() {
-    //reset
+    //reset board
     this.activeButton = '';
     this.compMove = true;
     this.count = '1';
     this.inputCount = 1;
+    this.flashes = 12;
     this.fillMovesArr();
+    //start game
     this.showPattern();
   }
 
@@ -70,39 +74,42 @@ export class SimonComponent implements OnInit {
   }
 
   displayColor() {
-    let color, sound;
+    //activate sound and color
+    let sound;
     switch (this.moves[this.inputCount]) {
       case 0:
-        this.activeButton = 'green';
         sound = this.sound0;
         break;
       case 1:
-        this.activeButton = 'red';
         sound = this.sound1;
         break;
       case 2:
-        this.activeButton = 'yellow';
         sound = this.sound2;
         break;
       case 3:
-        this.activeButton = 'blue';
         sound = this.sound3;
         break;
     }
     sound.play();
+    this.activeButton = this.colors[this.moves[this.inputCount]];
 
+    //set delay depending on user and inactivate color after delay
     let delay = this.compMove == true ? 800 : 300;
 
     setTimeout(() => {
       this.activeButton = '';
+      //if not the last move, increment inputCount and continue
       if (this.inputCount < Number(this.count)) {
         this.inputCount++;
         if (this.compMove == true) {
           this.wait();
         }
         return;
-      } else {
-        if (this.compMove == false) {
+      }
+      //if last move either show win (if end of game) or change user and continue
+      else {
+        //check for win
+        if (this.compMove == false && Number(this.count) == this.winningNumber) {
           this.showWin();
           return;
         }
@@ -115,8 +122,6 @@ export class SimonComponent implements OnInit {
             this.showPattern();
           }
         }, 400);
-
-
       }
     }, delay);
   }
@@ -128,24 +133,20 @@ export class SimonComponent implements OnInit {
   }
 
   showWin() {
-    let flashes = 12;
-    function showFlash() {
-      setTimeout(() => {
-        if (flashes) {
-          this.activeButton = this.colors[flashes % 4];
-          flashes--;
-          showFlash();
-        }
-        else{
-              this.activeButton = '';
-              this.compMove = true;
-              this.count = '1';
-              this.inputCount = 1;
-        }
-        }, 200);
-    }
+    setTimeout(() => {
+      if (this.flashes) {
+        this.activeButton = this.colors[this.flashes % 4];
+        this.flashes--;
+        this.showWin();
+      }
+      else {
+        this.activeButton = '';
+        this.compMove = true;
+        this.count = '1';
+        this.inputCount = 1;
+      }
+    }, 200);
   }
-
-  } //end SimonComponent Class
+} //end SimonComponent Class
 
 
