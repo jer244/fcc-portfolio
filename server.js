@@ -1,4 +1,4 @@
-//get dependencies
+//GET DEPENDENCIES
 const express = require('express');
 const path = require('path');
 const http = require('http');
@@ -7,45 +7,47 @@ const mongoose = require('mongoose');
 const jwt = require('jsonwebtoken');
 const passport = require('passport');
 
-//get models
+//GET MODELS
 const User = require('./server/models/user');
 
-//get API routes
+//GET API ROUTES
 const userRoutes = require('./server/routes/user');
 
-
-//store env variables offline
+//ENABLE STORAGE OF OFFLINE VARIABLES OFF OF GITHUB
 require('dotenv').config();
 
-//connect to the DB
+//CONNECT TO DB
 mongoose.connect('mongodb://' + process.env.DB_USER + ':' + process.env.DB_PASS + '@' + process.env.DB_HOST, {
-    useMongoClient: true,
+      useMongoClient: true,
 });
 mongoose.Promise = global.Promise;
 
 const app = express();
 
-//parsers for post data
+//INITIALIZE PASSPORT 
+app.use(passport.initialize());
+
+//PARSERS FOR POST DATA
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
-//point static path to dist folder
+//POINT STATIC PATH TO DIST FOLDER
 app.use(express.static(path.join(__dirname, 'dist')));
 
-//set up routes
+//SET UP ROUTES
 app.use('/user', userRoutes)
 
-//catch all other routes and return the index file
+//CATCH ALL OTHER ROUTES AND RETURN THE INDEX FILE
 app.get('*', (req, res) => {
     res.sendFile(path.join(__dirname, 'dist/index.html'));
 });
 
-//get port from environment and store in express
+//GET PORT FROM ENVIRONMENT AND STORE IN EXPRESS
 const port = process.env.PORT || '3000';
 app.set('port', port);
 
-//create HTTP server
+//CREATE HTTP SERVER
 const server = http.createServer(app);
 
-//listen on provided port, on all network interfaces
+//LISTEN TO PROVIDED PORT ON ALL NETWORK INTERFACES
 server.listen(port, () => console.log( `API running on localhost: ${port}`));
