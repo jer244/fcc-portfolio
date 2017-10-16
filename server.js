@@ -25,6 +25,7 @@ mongoose.Promise = global.Promise;
 const app = express();
 
 //INITIALIZE PASSPORT 
+require('./server/config/passport');
 app.use(passport.initialize());
 
 //PARSERS FOR POST DATA

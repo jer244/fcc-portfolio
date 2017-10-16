@@ -7,10 +7,10 @@ var userSchema = new Schema({
     password: { type: String, required: true },
 });
 
-userSchema.pre('save', function (next) {
+/*userSchema.pre('save', function (next) {
     var user = this;
     //IF PASSWORD HASN'T CHANGED    
-    if (!user.isModdified('password')) return next();
+    if (!user.isModified('password')) return next();
     //GENERATE A SALT THEN HASH THE PASSWORD
     bcrypt.genSalt(10, function (err, salt) {
         if (err) return next(err);
@@ -20,7 +20,7 @@ userSchema.pre('save', function (next) {
             next();
         })
     })
-});
+});*/
 
 userSchema.methods.validatePassword = function (password, cb) {
     bcrypt.compare(password, this.password, function(err, valid){
