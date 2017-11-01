@@ -13,7 +13,7 @@ const User = require('./server/models/user');
 //GET API ROUTES
 const userRoutes = require('./server/routes/user');
 
-//ENABLE STORAGE OF OFFLINE VARIABLES OFF OF GITHUB
+//ENABLE STORAGE OF ENVIRONMENTAL VARIABLES OFF OF GITHUB
 require('dotenv').config();
 
 //CONNECT TO DB
@@ -36,7 +36,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.static(path.join(__dirname, 'dist')));
 
 //SET UP ROUTES
-app.use('/user', userRoutes)
+app.use('/api/user', userRoutes)
 
 //CATCH ALL OTHER ROUTES AND RETURN THE INDEX FILE
 app.get('*', (req, res) => {

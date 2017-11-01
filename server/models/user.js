@@ -7,7 +7,7 @@ var userSchema = new Schema({
     password: { type: String, required: true },
 });
 
-/*userSchema.pre('save', function (next) {
+userSchema.pre('save', function (next) {
     var user = this;
     //IF PASSWORD HASN'T CHANGED    
     if (!user.isModified('password')) return next();
@@ -20,7 +20,7 @@ var userSchema = new Schema({
             next();
         })
     })
-});*/
+});
 
 userSchema.methods.validatePassword = function (password, cb) {
     bcrypt.compare(password, this.password, function(err, valid){

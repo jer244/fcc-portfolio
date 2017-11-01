@@ -1,6 +1,20 @@
 # Chingu FCC Speedrun Challenge
 
-## Details
+## End Summary
+
+The code in this repo was written as part of a [Chingu FCC Speedrun Challenge](https://github.com/P1xt/chingu-fcc-speedrun-challenge).
+
+It was planned as a month-long attempt at completing as many Free Code Camp projects as possible.  About 3 weeks in, I started a group project as part of a Chingu Voyage Cohort and abandoned the project.  
+
+As you can see, I was able to build the functionality for the Pomodoro, Random Quote Generator, Simon, Tic Tac Toe, Tribute, Weather and Wiki apps.  I also started building out a server and authentication for the backend apps, but that's when the Chingu Cohort took over my time.
+
+I did not get to styling any of the apps with the exception of the Tribute and Simon.
+
+You can find the rules to the Speedrun below.  I do not plan on building out this repo any more.  I do hope to try another speedrun in the future, but will either start over with a different section of the FCC portfolio or with a different set of apps entirely.
+
+-Jeremy
+
+### Details
 
 This will be a month-long challenge to see how many Free Code Camp projects I can complete.
 
@@ -36,7 +50,7 @@ Who can make the most complete and professional looking portfolio in Phase 2?
 
 **Note:** This is the type of competition where, yes, winning is awesome, but participating and giving it your all is the best prize, and everyone can get that :D
 
-## FCC Projects
+### FCC Projects
 
 Copy this table as needed to make a separate table for each team member for recording blog posts
 

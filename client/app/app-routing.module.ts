@@ -9,6 +9,8 @@ import { TictactoeComponent } from "app/frontend/tictactoe/tictactoe.component";
 import { PomodoroComponent } from "app/frontend/pomodoro/pomodoro.component";
 import { SimonComponent } from "app/frontend/simon/simon.component";
 import { CalculatorComponent } from "app/frontend/calculator/calculator.component";
+import { UserComponent } from 'app/frontend/user/user.component';
+import { USER_ROUTES } from 'app/frontend/user/user.routes';
 
 const routes: Routes = [
   { path: '', component: LandingPageComponent, pathMatch: 'full' },
@@ -20,6 +22,7 @@ const routes: Routes = [
   { path: 'pomo', component: PomodoroComponent },
   { path: 'tictactoe', component: TictactoeComponent },
   { path: 'simon', component: SimonComponent },
+  { path: 'user', component: UserComponent, children: USER_ROUTES },
   { path: '**', redirectTo: '/' },
 ];
 

@@ -21,7 +21,7 @@ export class PomodoroComponent {
 
   startClock() {
     this.timeRunning = true;
-    let timer = Observable.timer(0, 100);
+    let timer = Observable.timer(0, 1000);
     if (this.isWorkTime) {
       this.subscription = timer.subscribe((t) => {
         this.tick++;

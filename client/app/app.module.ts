@@ -20,6 +20,10 @@ import { CalculatorComponent } from './frontend/calculator/calculator.component'
 import { GameboardComponent } from './frontend/tictactoe/gameboard/gameboard.component';
 import { ScoreboardComponent } from './frontend/tictactoe/scoreboard/scoreboard.component';
 import { CellComponent } from './frontend/tictactoe/cell/cell.component';
+import { UserComponent } from './frontend/user/user.component';
+import { SignupComponent } from './frontend/user/signup/signup.component';
+import { LoginComponent } from './frontend/user/login/login.component';
+import { LogoutComponent } from './frontend/user/logout/logout.component';
 
 @NgModule({
   declarations: [
@@ -36,6 +40,10 @@ import { CellComponent } from './frontend/tictactoe/cell/cell.component';
     GameboardComponent,
     ScoreboardComponent,
     CellComponent,
+    UserComponent,
+    SignupComponent,
+    LoginComponent,
+    LogoutComponent,
   ],
   imports: [
     BrowserModule,
